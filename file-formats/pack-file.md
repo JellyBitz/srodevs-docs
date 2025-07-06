@@ -28,18 +28,18 @@ File with encryption support used to archive and manage other files.
 16  byte[]  Checksum      // Used to test the blowfish key
 205 byte[]  Reserved
 
-// Block (First needs to be decrypted if required)
+// Block; 20 x 128 = 2560 bytes needs to be decrypted before reading if required
 for (i = 0; i < 20; i++)
 {
     // Entry
-    1   byte    Entry.Type      // 0 = Empty, 1 = Folder, 2  = File
-    89  char[]  Entry.Name
-    8   ulong   CreateTime      // Windows time format
-    8   ulong   ModifyTime      // Windows time format
-    8   ulong   Position        // Position of data for files, position of the Block for folders
-    4   uint    Size            // Size of files
-    8   ulong   NextBlock       // Position of the next block in the chain from current directory
-    2   byte[]  Padding         // So blowfish can be used directly on the struct
+    1   byte    Type        // 0 = Empty, 1 = Folder, 2  = File
+    89  char[]  Name
+    8   ulong   CreateTime  // Windows time format
+    8   ulong   ModifyTime  // Windows time format
+    8   ulong   Position    // Position of data for files, position of the Block for folders
+    4   uint    Size        // Size of files
+    8   ulong   NextBlock   // Position of the next block in the chain from current directory
+    2   byte[]  Padding     // So blowfish can be used directly on the struct
 }
 ```
 {% endtab %}
@@ -72,8 +72,16 @@ struct PackFileBlock
     PackFileEntry Entries[20];    
 };
 
-PackFileHeader Header @ 0;
-PackFileBlock RootBlock @ 256;
+struct PackFile
+{
+    PackFileHeader Header;
+    if(!Header.IsEncrypted)
+    {
+        PackFileBlock RootBlock @ 256;
+    }
+};
+
+PackFile file @ 0;
 ```
 {% endtab %}
 {% endtabs %}

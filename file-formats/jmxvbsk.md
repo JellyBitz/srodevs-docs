@@ -16,39 +16,42 @@ layout:
 
 # JMXVBSK
 
+Contains the bone hierarchy to form a skeleton used for rigging process of the model.
+
 {% tabs %}
 {% tab title="File Structure" %}
 ```csharp
 //CPrimBranch : CPrim, IPrim
 12  string  Signature               //JMXVBSK 0101
 4   uint    SubPrimCount            // Number of bones
-for (int i = 0; i < SubPrimCount; i++)
+foreach(SubPrimCount)
 {
     //CPrimBone : CPrimNode, CSubPrim
     // BoneData
-    1   byte    BoneType            // 0 = CPrimBone, 1 = CPrimDummy
-    4   uint    BoneName.Length 
-    *   string  BoneName
-    4   uint    ParentBoneName.Length
-    *   string  ParentBoneName
+    1   byte    Type            // 0 = CPrimBone, 1 = CPrimDummy
+    4   uint    Name.Length 
+    *   string  Name
+    4   uint    ParentName.Length
+    *   string  ParentName
 
-    // Transform relative to parent bone
+    // Transformation relative to parent bone
     16  Quaternion  RotationToParent
     12  Vector3     TranslationToParent
     
-    // Transform relative to world origin
+    // Transformation relative to world origin
     16  Quaternion  RotationToOrigin
     12  Vector3     TranslationToOrigin
     
-    // Transform relative to local armature
+    // Transformation relative to local armature
     16  Quaternion  RotationToLocal
     12  Vector3     TranslationToLocal
     
     4   uint    ChildBoneCount
-    for (int j = 0; j < ChildBoneCount; j++)
+    foreach(ChildBoneCount)
     {
-        4   uint    ChildBoneName.Length
-        *   string  ChildBoneName
+        // ChildBone
+        4   uint    Name.Length
+        *   string  Name
     }    
 }
 4   uint    unkUInt0    //ASSERT(nCount == 0)?
@@ -101,8 +104,8 @@ struct Bone
     Vector3 TranslationFromOrigin;
     Quaternion RotationFromLocalArmature;
     Vector3 TranslationFromLocalArmature;
-    u32 ChildBonesCount;
-    ChildBone Children[ChildBonesCount];
+    u32 ChildBoneCount;
+    ChildBone Children[ChildBoneCount];
 };
 
 struct JMXVBSK
@@ -110,6 +113,8 @@ struct JMXVBSK
     char Signature[12];
     u32 BoneCount;
     Bone Bones[BoneCount];
+    u32 unkInt0;
+    u32 unkInt1;
 };
 
 JMXVBSK file @ 0;

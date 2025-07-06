@@ -16,11 +16,12 @@ layout:
 
 # JMXVBAN
 
+Contains the keyframes transformations (translation, rotation) to animate a skeleton.
+
 {% tabs %}
 {% tab title="File Structure" %}
-```csharp
-12  string  Signature           //JMXVBAN 0102
-4   int     unkInt0             // Introduced in 0102, 0 in all files
+<pre class="language-csharp"><code class="lang-csharp"><strong>12  string  Signature           //JMXVBAN 0102
+</strong>4   int     unkInt0             // Introduced in 0102, 0 in all files
 4   int     unkInt1             // Introduced in 0102, 0 in all files
 4   int     Name.Length
 *   string  Name
@@ -29,27 +30,27 @@ layout:
 4   int     IsCyclic
 
 // Keyframe timings, so you can interpolate between two poses
-4   uint    KeyframeTimesCount
-foreach(KeyframeTime)
+4   uint    KeyframeCount
+foreach (KeyframeCount)
 {
-    4   uint    KeyframeTime    // in ms
+    4   uint    Time            // in ms
 }
 
-// Bones with transformations
 4   uint    AnimatedBoneCount
-foreach(AnimatedBone)
+foreach(AnimatedBoneCount)
 {
-    4   uint    AnimatedBoneName.Length
-    *   string  AnimatedBoneName
-    4   uint    AnimatedKeyframeCount
-    foreach(AnimatedKeyframe)
+    // AnimatedBone
+    4   uint    Name.Length
+    *   string  Name
+    4   uint    TransformationCount // Linked to the KeyframeCount
+    foreach(TransformationCount)
     {
-        // These two together give you the transformation matrix relative to it's parent bone/joint
-        16  Quaternion  AnimatedKeyframe.Rotation
-        12  Vector3     AnimatedKeyframe.Translation
+        // Transformation matrix relative to the parent bone/joint
+        16  Quaternion  Rotation
+        12  Vector3     Translation
     }
 }
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="ImHex" %}
@@ -72,7 +73,7 @@ struct Vector3
     float Z;
 };
 
-struct Keyframe
+struct Transformation
 {
     Quaternion Rotation;
     Vector3 Translation;
@@ -80,10 +81,10 @@ struct Keyframe
 
 struct AnimatedBone
 {
-    u32 BoneNameLength;
-    char BoneName[BoneNameLength];
-    u32 KeyframesCount;
-    Keyframe Keyframes[KeyframesCount];
+    u32 NameLength;
+    char Name[NameLength];
+    u32 TransformationCount;
+    Transformation Transformations[TransformationCount];
 };
 
 struct JMXVBAN
@@ -96,10 +97,10 @@ struct JMXVBAN
     u32 Duration;
     u32 FPS;
     u32 IsCyclic;
-    u32 KeyframeTimesCount;
-    u32 KeyframeTimes[KeyframeTimesCount];
-    u32 AnimatedBonesCount;
-    AnimatedBone AnimatedBones[AnimatedBonesCount];
+    u32 KeyframeCount;
+    u32 Keyframes[KeyframeCount];
+    u32 AnimatedBoneCount;
+    AnimatedBone AnimatedBones[AnimatedBoneCount];
 };
 
 JMXVBAN file @ 0;
