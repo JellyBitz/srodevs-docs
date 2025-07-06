@@ -16,3 +16,4 @@ layout:
 
 # Agent Packets
 
+Packets used when communicating with AgentServer (dispatched to ShardManager or GameServer).
