@@ -20,13 +20,13 @@ layout:
 {% tab title="File Structure" %}
 ```csharp
 //CPrimBranch : CPrim, IPrim
-12  string  Signature
-4   uint    SubPrimCount   //number of bones
+12  string  Signature               //JMXVBSK 0101
+4   uint    SubPrimCount            // Number of bones
 for (int i = 0; i < SubPrimCount; i++)
 {
     //CPrimBone : CPrimNode, CSubPrim
-    //BoneData
-    1   byte    BoneType            //0 = CPrimBone, 1 = CPrimDummy
+    // BoneData
+    1   byte    BoneType            // 0 = CPrimBone, 1 = CPrimDummy
     4   uint    BoneName.Length 
     *   string  BoneName
     4   uint    ParentBoneName.Length
@@ -45,7 +45,7 @@ for (int i = 0; i < SubPrimCount; i++)
     12  Vector3     TranslationToLocal
     
     4   uint    ChildBoneCount
-    for (int j = 0; j < childBoneCount; j++)
+    for (int j = 0; j < ChildBoneCount; j++)
     {
         4   uint    ChildBoneName.Length
         *   string  ChildBoneName
@@ -101,8 +101,8 @@ struct Bone
     Vector3 TranslationFromOrigin;
     Quaternion RotationFromLocalArmature;
     Vector3 TranslationFromLocalArmature;
-    u32 childBonesCount;
-    ChildBone Children[childBonesCount];
+    u32 ChildBonesCount;
+    ChildBone Children[ChildBonesCount];
 };
 
 struct JMXVBSK

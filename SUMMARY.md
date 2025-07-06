@@ -2,7 +2,8 @@
 
 * [🐫 SRO Developing Docs](README.md)
 * [File Formats](file-formats/README.md)
-  * [Joymax Pack File](file-formats/joymax-pack-file.md)
+  * [Pack File](file-formats/pack-file.md)
+  * [JMXVBAN](file-formats/jmxvban.md)
   * [JMXVBSK](file-formats/jmxvbsk.md)
 * [Packets](packets/README.md)
   * [Global Packets](packets/global.md)

@@ -14,17 +14,19 @@ layout:
     visible: true
 ---
 
-# Joymax Pack File
+# Pack File
+
+File with encryption support used to archive and manage other files.
 
 {% tabs %}
 {% tab title="File Structure" %}
 ```csharp
 // Header
-30   char[]  Signature     //JoyMax File Manager!\n
-4    byte[]  Version       //2.0.0.1
-1    byte    IsEncrypted
-16   byte[]  Checksum      // Used to test the blowfish key
-205  byte[]  Reserved
+30  char[]  Signature     //JoyMax File Manager!\n
+4   byte[]  Version       //2.0.0.1
+1   byte    IsEncrypted
+16  byte[]  Checksum      // Used to test the blowfish key
+205 byte[]  Reserved
 
 // Block (First needs to be decrypted if required)
 for (i = 0; i < 20; i++)
