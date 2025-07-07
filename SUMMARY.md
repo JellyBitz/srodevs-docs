@@ -6,6 +6,7 @@
   * [JMXVBAN](file-formats/jmxvban.md)
   * [JMXVBSK](file-formats/jmxvbsk.md)
   * [JMXVDDJ](file-formats/jmxvddj.md)
+  * [JMXVMAPM](file-formats/jmxvmapm.md)
 * [Packets](packets/README.md)
   * [Global Packets](packets/global.md)
   * [Gateway Packets](packets/gateway.md)

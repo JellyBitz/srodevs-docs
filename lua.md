@@ -28,9 +28,9 @@ layout:
 
 ### Decompilers
 
-* [https://luadec.metaworm.site/](https://luadec.metaworm.site/https://github.com/viruscamp/luadechttps://github.com/HansWessels/unluac)
-* [https://github.com/viruscamp/luadec](https://luadec.metaworm.site/https://github.com/viruscamp/luadechttps://github.com/HansWessels/unluac)
-* [https://github.com/HansWessels/unluac](https://luadec.metaworm.site/https://github.com/viruscamp/luadechttps://github.com/HansWessels/unluac)
+* [https://luadec.metaworm.site/](https://luadec.metaworm.site/)
+* [https://github.com/viruscamp/luadec](https://github.com/viruscamp/luadec)
+* [https://github.com/HansWessels/unluac](https://github.com/HansWessels/unluac)
 
 ## API Functions
 
