@@ -58,7 +58,7 @@ for (int yBlock = 0; yBlock < 6; yBlock++)
             }
         }
 
-        4   float   Block.HeightMax        // Heighest point including objects
+        4   float   Block.HeightMax        // Highest point including objects
         4   float   Block.HeightMin        // Lowest point including objects
         20  byte[]  Block.Reserved         // Reserved[0] = 1 in some blocks
     }
