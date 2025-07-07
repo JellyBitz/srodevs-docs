@@ -19,7 +19,7 @@ layout:
 Describes the map terrain mesh of a worldmap region.
 
 {% tabs %}
-{% tab title="First Tab" %}
+{% tab title="File Structure" %}
 ```csharp
 12  char[]  Signature      //JMXVMAPM1000
 
