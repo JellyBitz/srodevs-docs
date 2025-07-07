@@ -7,6 +7,7 @@
   * [JMXVBSK](file-formats/jmxvbsk.md)
   * [JMXVDDJ](file-formats/jmxvddj.md)
   * [JMXVMAPM](file-formats/jmxvmapm.md)
+  * [JMXVMFO](file-formats/jmxvmfo.md)
 * [Packets](packets/README.md)
   * [Global Packets](packets/global.md)
   * [Gateway Packets](packets/gateway.md)
