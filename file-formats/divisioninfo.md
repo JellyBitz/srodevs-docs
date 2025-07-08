@@ -28,7 +28,7 @@ foreach(ServerDivisionCount)
     // ServerDivision
     4   uint    Name.Length
     *   string  Name
-    1   byte    unkByte0             //0
+    1   byte    unkByte0            //0
     
     1   byte    GatewayCount
     foreach(GatewayCount)
@@ -36,7 +36,7 @@ foreach(ServerDivisionCount)
         // Gateway
         4   uint    Address.Length  // IP or hostname
         *   string  Address
-        1   byte    unkByte1
+        1   byte    unkByte1        //0
     }
 }
 ```
