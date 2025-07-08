@@ -8,6 +8,7 @@
   * [JMXVDDJ](file-formats/jmxvddj.md)
   * [JMXVMAPM](file-formats/jmxvmapm.md)
   * [JMXVMFO](file-formats/jmxvmfo.md)
+  * [DIVISIONINFO](file-formats/divisioninfo.md)
 * [Packets](packets/README.md)
   * [Global Packets](packets/global.md)
   * [Gateway Packets](packets/gateway.md)
