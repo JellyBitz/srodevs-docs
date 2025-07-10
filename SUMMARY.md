@@ -20,3 +20,4 @@
   * [Agent Packets](packets/agent.md)
 * [LUA](lua.md)
 * [CScript](cscript.md)
+* [Client](client.md)
