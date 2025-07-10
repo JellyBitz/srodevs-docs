@@ -26,7 +26,7 @@ Packets are chunks of bytes (data) sent/received through the network, ordered an
 * [Global](global.md)
 * [Gateway](gateway.md) (GatewayServer)
 * [Download](download/) (DownloadServer)
-* [Agent](agent.md) (AgentServer)
+* [Agent](agent/) (AgentServer)
 
 ### Message Types
 
