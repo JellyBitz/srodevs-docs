@@ -26,4 +26,5 @@
     * [AGENT\_LOGIN\_AUTH\_ACK](packets/agent/agent_login_auth_ack.md)
 * [LUA](lua.md)
 * [CScript](cscript.md)
-* [Client](client.md)
+* [Client](client/README.md)
+  * [A Guide to Silkroad's Security](client/a-guide-to-silkroads-security.md)

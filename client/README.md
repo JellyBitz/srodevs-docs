@@ -15,3 +15,5 @@ layout:
 
 # Client
 
+* [A Guide to Silkroad's Security](a-guide-to-silkroads-security.md)
+
