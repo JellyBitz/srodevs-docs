@@ -53,7 +53,7 @@ if(Result == 0x02)
 
 ***
 
-#### PatchErrorCode
+### PatchErrorCode
 
 ```csharp
 public enum PatchErrorCode : byte

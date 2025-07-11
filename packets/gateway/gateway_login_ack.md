@@ -68,7 +68,7 @@ else if(Result == 0x03) // Custom message, not supported by every client
 
 ***
 
-#### LoginErrorCode
+### LoginErrorCode
 
 ```csharp
 public enum LoginErrorCode
@@ -128,7 +128,7 @@ public enum LoginErrorCode
 }
 ```
 
-#### LoginBlockType
+### LoginBlockType
 
 ```csharp
 public enum LoginBlockType
@@ -161,3 +161,4 @@ public enum LoginBlockType
     FreeServiceOver = 4,
 }
 ```
+
