@@ -24,7 +24,7 @@ layout:
 1   byte    Result
 if(Result == 0x01)
 {
-    4   uint    AgentServer.QueueID
+    4   uint    QueueID
     2   ushort  AgentServer.IP.Length
     *   string  AgentServer.IP
     2   ushort  AgentServer.Port
@@ -68,7 +68,7 @@ else if(Result == 0x03) // Custom message, not supported by every client
 
 ***
 
-#### References
+#### LoginErrorCode
 
 ```csharp
 public enum LoginErrorCode
@@ -127,6 +127,8 @@ public enum LoginErrorCode
     UITT_TEENSERVER_ERRMGS_ADULT = 0x10,
 }
 ```
+
+#### LoginBlockType
 
 ```csharp
 public enum LoginBlockType
