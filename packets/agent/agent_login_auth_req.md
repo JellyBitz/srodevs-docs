@@ -19,8 +19,6 @@ layout:
 * Direction `C > S`
 * Encrypted
 
-***
-
 ```csharp
 4   uint    QueueID          // From GATEWAY_LOGIN_ACK
 2   ushort  Username.Length

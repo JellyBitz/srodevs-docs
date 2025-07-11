@@ -19,8 +19,6 @@ layout:
 * Direction `C > S`
 * Encrypted
 
-***
-
 ```csharp
 1   byte    ContentID
 2   ushort  Client.Name.Length

@@ -19,8 +19,6 @@ layout:
 * Direction `S > C`&#x20;
 * Massive
 
-***
-
 ```csharp
 1   byte    Result
 if(Result == 0x02)

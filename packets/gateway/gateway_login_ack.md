@@ -18,8 +18,6 @@ layout:
 * Opcode `0xA102`
 * Direction `S > C`
 
-***
-
 ```csharp
 1   byte    Result
 if(Result == 0x01)
