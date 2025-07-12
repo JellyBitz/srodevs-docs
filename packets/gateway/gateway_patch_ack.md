@@ -62,9 +62,9 @@ public enum PatchErrorCode : byte
     /// </summary>
     InvalidVersion = 1,
 
-    /// <summary>
+    /// <exception>
     /// BSObj Plugin: can't create file transfer manager! Maybe pack file corrupted or someone is already accessing it now... try a few minutes later"
-    /// </summary>
+    /// </exception>
     Update = 2,
 
     /// <summary>
