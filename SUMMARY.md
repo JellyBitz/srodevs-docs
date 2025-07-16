@@ -17,6 +17,8 @@
     * [GATEWAY\_LOGIN\_ACK](packets/gateway/gateway_login_ack.md)
     * [GATEWAY\_PATCH\_REQ](packets/gateway/gateway_patch_req.md)
     * [GATEWAY\_PATCH\_ACK](packets/gateway/gateway_patch_ack.md)
+    * [GATEWAY\_NOTICE\_REQ](packets/gateway/gateway_notice_req.md)
+    * [GATEWAY\_NOTICE\_ACK](packets/gateway/gateway_notice_ack.md)
   * [Download Packets](packets/download/README.md)
     * [DOWNLOAD\_FILE\_REQ](packets/download/download_file_req.md)
     * [DOWNLOAD\_FILE\_CHUNK](packets/download/download_file_chunk.md)
