@@ -1,18 +1,3 @@
----
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # File Formats
 
 You can find many file formats designed to perform all these tasks required on the proprietary game engine developed by Joymax for Silkroad Online.
@@ -23,4 +8,4 @@ You can find many file formats designed to perform all these tasks required on t
 
 ### Others
 
-<table><thead><tr><th>Name</th><th data-type="checkbox">Is inside pack (.pk2)</th><th>Filename / Extension</th></tr></thead><tbody><tr><td>Gateway Server Divisions</td><td>true</td><td><a href="divisioninfo.md">DIVISIONINFO.txt</a></td></tr><tr><td>Gateway Port</td><td>true</td><td><a href="gateport.md">GATEPORT.txt</a></td></tr><tr><td>Silkroad Client Version</td><td>true</td><td>SV.T</td></tr><tr><td>Game Basic Config</td><td>false</td><td>silkcfg.dat</td></tr><tr><td>Game Settings</td><td>false</td><td>SROptionSet.dat</td></tr><tr><td>Chat Blocking List</td><td>false</td><td>SRChattingBlockingList.dat</td></tr><tr><td>Game Quick Slot Options</td><td>false</td><td>SRExtQSOption.dat</td></tr><tr><td>GM Warp Points</td><td>false</td><td>gmwpfort.dat</td></tr><tr><td>Game Windows Position</td><td>false</td><td>wndpos.dat</td></tr><tr><td>Interface (2nd version)</td><td>true</td><td>*.2dt</td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th data-type="checkbox">Is inside pack (.pk2)</th><th>Filename / Extension</th></tr></thead><tbody><tr><td>Gateway Server Divisions</td><td>true</td><td><a href="divisioninfo.md">DIVISIONINFO.txt</a></td></tr><tr><td>Gateway Port</td><td>true</td><td><a href="gateport.md">GATEPORT.txt</a></td></tr><tr><td>Silkroad Client Version</td><td>true</td><td>SV.T</td></tr><tr><td>Game Basic Config</td><td>false</td><td><a href="silkcfg.md">silkcfg.dat</a></td></tr><tr><td>Game Settings</td><td>false</td><td>SROptionSet.dat</td></tr><tr><td>Chat Blocking List</td><td>false</td><td>SRChattingBlockingList.dat</td></tr><tr><td>Game Quick Slot Options</td><td>false</td><td>SRExtQSOption.dat</td></tr><tr><td>GM Warp Points</td><td>false</td><td>gmwpfort.dat</td></tr><tr><td>Game Windows Position</td><td>false</td><td>wndpos.dat</td></tr><tr><td>Interface (2nd version)</td><td>true</td><td>*.2dt</td></tr></tbody></table>

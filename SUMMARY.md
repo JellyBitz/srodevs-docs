@@ -10,6 +10,7 @@
   * [JMXVMFO](file-formats/jmxvmfo.md)
   * [DIVISIONINFO](file-formats/divisioninfo.md)
   * [GATEPORT](file-formats/gateport.md)
+  * [SILKCFG](file-formats/silkcfg.md)
 * [Packets](packets/README.md)
   * [Global Packets](packets/global.md)
   * [Gateway Packets](packets/gateway/README.md)
