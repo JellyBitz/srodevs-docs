@@ -1,18 +1,3 @@
----
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # LUA
 
 [LUA](https://www.lua.org/about.html) is used as an scripting language extension to handle interactions between NPC and players.

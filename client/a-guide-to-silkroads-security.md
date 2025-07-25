@@ -1,18 +1,6 @@
 ---
 description: 'By: Drew Benton'
 hidden: true
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # A Guide to Silkroad's Security

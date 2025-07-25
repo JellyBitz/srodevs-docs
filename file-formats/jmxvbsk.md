@@ -1,22 +1,10 @@
 ---
 hidden: true
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # JMXVBSK
 
-Contains the bone hierarchy to form a skeleton used for rigging process of the model.
+Contains the bone hierarchy to form a skeleton used for the rigging process from 3D models.
 
 {% tabs %}
 {% tab title="File Structure" %}
@@ -27,7 +15,7 @@ Contains the bone hierarchy to form a skeleton used for rigging process of the m
 foreach(SubPrimCount)
 {
     //CPrimBone : CPrimNode, CSubPrim
-    // BoneData
+    // Bone
     1   byte    Type            // 0 = CPrimBone, 1 = CPrimDummy
     4   uint    Name.Length 
     *   string  Name

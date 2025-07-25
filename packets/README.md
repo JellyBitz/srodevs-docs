@@ -3,18 +3,6 @@ description: >-
   Packets are chunks of bytes (data) sent/received through the network, ordered
   and organized in packages with an unique ID (opcode) to exchange information
   between client and server through protocols.
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Packets
@@ -23,7 +11,7 @@ Packets are chunks of bytes (data) sent/received through the network, ordered an
 
 ### Protocols
 
-* [Global](global.md)
+* [Global](global/)
 * [Gateway](gateway/) (GatewayServer)
 * [Download](download/) (DownloadServer)
 * [Agent](agent/) (AgentServer)
