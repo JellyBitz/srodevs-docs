@@ -18,7 +18,8 @@ layout:
 # GLOBAL\_MODULE\_IDENTIFICATION
 
 * Opcode `0x2001`&#x20;
-* Direction `-`&#x20;
+* Direction `S > C`&#x20;
+* Encrypted
 
 ```csharp
 2   ushort  Module.Name.Length
