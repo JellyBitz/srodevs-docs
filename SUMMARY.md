@@ -19,6 +19,8 @@
     * [GATEWAY\_PATCH\_ACK](packets/gateway/gateway_patch_ack.md)
     * [GATEWAY\_NOTICE\_REQ](packets/gateway/gateway_notice_req.md)
     * [GATEWAY\_NOTICE\_ACK](packets/gateway/gateway_notice_ack.md)
+    * [GATEWAY\_SHARD\_LIST\_REQ](packets/gateway/gateway_shard_list_req.md)
+    * [GATEWAY\_SHARD\_LIST\_ACK](packets/gateway/gateway_shard_list_ack.md)
   * [Download Packets](packets/download/README.md)
     * [DOWNLOAD\_FILE\_REQ](packets/download/download_file_req.md)
     * [DOWNLOAD\_FILE\_CHUNK](packets/download/download_file_chunk.md)

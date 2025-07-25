@@ -1,17 +1,5 @@
 ---
 hidden: true
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Global Packets
@@ -23,3 +11,7 @@ Packets used when communicating with any server (globally used).
 ### Diagram
 
 <figure><img src="../.gitbook/assets/packets-global-diagram.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="success" %}
+For more info, visit [A Guide to Silkroad's Security](../client/a-guide-to-silkroads-security.md)
+{% endhint %}
