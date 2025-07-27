@@ -31,6 +31,7 @@
   * [Agent Packets](packets/agent/README.md)
     * [AGENT\_LOGIN\_AUTH\_REQ](packets/agent/agent_login_auth_req.md)
     * [AGENT\_LOGIN\_AUTH\_ACK](packets/agent/agent_login_auth_ack.md)
+    * [AGENT\_QUEST\_SCRIPT](packets/agent/agent_quest_script.md)
 * [LUA](lua.md)
 * [CScript](cscript.md)
 * [Client](client/README.md)
