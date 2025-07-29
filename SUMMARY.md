@@ -27,6 +27,8 @@
     * [GATEWAY\_LOGIN\_IBUV\_CHALLENGE](packets/gateway/gateway_login_ibuv_challenge.md)
     * [GATEWAY\_LOGIN\_IBUV\_CONFIRM\_REQ](packets/gateway/gateway_login_ibuv_confirm_req.md)
     * [GATEWAY\_LOGIN\_IBUV\_CONFIRM\_ACK](packets/gateway/gateway_login_ibuv_confirm_ack.md)
+    * [GATEWAY\_SHARD\_LIST\_PING\_REQ](packets/gateway/gateway_shard_list_ping_req.md)
+    * [GATEWAY\_SHARD\_LIST\_PING\_ACK](packets/gateway/gateway_shard_list_ping_ack.md)
   * [Download Packets](packets/download/README.md)
     * [DOWNLOAD\_FILE\_REQ](packets/download/download_file_req.md)
     * [DOWNLOAD\_FILE\_CHUNK](packets/download/download_file_chunk.md)
