@@ -37,6 +37,8 @@
     * [AGENT\_LOGIN\_AUTH\_REQ](packets/agent/agent_login_auth_req.md)
     * [AGENT\_LOGIN\_AUTH\_ACK](packets/agent/agent_login_auth_ack.md)
     * [AGENT\_QUEST\_SCRIPT](packets/agent/agent_quest_script.md)
+    * [AGENT\_CHARACTER\_SELECTION\_ACTION\_REQ](packets/agent/agent_character_selection_action_req.md)
+    * [AGENT\_CHARACTER\_SELECTION\_ACTION\_ACK](packets/agent/agent_character_selection_action_ack.md)
 * [LUA](lua.md)
 * [CScript](cscript.md)
 * [Client](client/README.md)
