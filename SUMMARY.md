@@ -11,6 +11,7 @@
   * [DIVISIONINFO](file-formats/divisioninfo.md)
   * [GATEPORT](file-formats/gateport.md)
   * [SILKCFG](file-formats/silkcfg.md)
+  * [JMXV2DTI](file-formats/jmxv2dti.md)
 * [Packets](packets/README.md)
   * [Global Packets](packets/global/README.md)
     * [GLOBAL\_MODULE\_KEEP\_ALIVE](packets/global/global_module_keep_alive.md)

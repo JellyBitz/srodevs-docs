@@ -9,7 +9,7 @@ Contains the basic worldmap setup information with the enabled regions as bits.
 {% tabs %}
 {% tab title="File Structure" %}
 ```csharp
-12    char[]  Signature      // "JMXVMFO 1000"
+12    char[]  Signature      //JMXVMFO 1000
 2     short   MapWidth       // 256 at max. (8 bits from RegionID)
 2     short   MapHeight      // 128 at max. (7 bits from RegionID, 1 bit is used as dungeon indicator)
 2     short   unkShort0
