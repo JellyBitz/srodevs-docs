@@ -26,7 +26,7 @@ while(true)
 {
     1   bool    CanRead
     if(!CanRead)
-        break;
+        break
 
     1   byte    Farm.ID
     2   ushort  Farm.Name.Length
@@ -37,7 +37,7 @@ while(true)
 {
     1   bool    CanRead
     if(!CanRead)
-        break;
+        break
 
     2   ushort  Shard.ID
     2   ushort  Shard.Name.Length

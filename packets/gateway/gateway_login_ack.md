@@ -41,11 +41,11 @@ else if(Result == 0x02)
 else if(Result == 0x03) // Custom message, not supported by every client
 {
     // Not looked into this yet
-    1   byte    unkByte0
-    1   byte    unkByte1
+    1   byte    unkByte01
+    1   byte    unkByte02
     2   ushort  Message.Length
     *   string  Message
-    2   ushort  unkUShort0
+    2   ushort  unkUShort01
 }
 ```
 

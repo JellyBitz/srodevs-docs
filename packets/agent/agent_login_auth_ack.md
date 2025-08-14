@@ -5,7 +5,7 @@
 
 ```csharp
 1   byte    Result
-if(result == 0x02)
+if(Result == 0x02)
 {
     1   byte    ErrorCode
 }

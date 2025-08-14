@@ -43,6 +43,8 @@
     * [AGENT\_ENTITY\_MOVEMENT\_ACK](packets/agent/agent_entity_movement_ack.md)
     * [AGENT\_ENTITY\_ROTATION\_REQ](packets/agent/agent_entity_rotation_req.md)
     * [AGENT\_ENTITY\_ROTATION\_ACK](packets/agent/agent_entity_rotation_ack.md)
+    * [AGENT\_ENTITY\_SKILL\_CAST\_BEGIN](packets/agent/agent_entity_skill_cast_begin.md)
+    * [AGENT\_ENTITY\_SKILL\_CAST\_END](packets/agent/agent_entity_skill_cast_end.md)
 * [LUA](lua.md)
 * [CScript](cscript.md)
 * [Client](client/README.md)

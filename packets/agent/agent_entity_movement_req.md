@@ -40,7 +40,7 @@ if(HasDestination)
 }
 else
 {
-    1   byte    MovementType // 1 = Walking, 0 = Spinning (visually bugged, replaced by AGENT_ENTITY_ROTATION_REQ)
+    1   byte    ControlType // 1 = Walking, 0 = Spinning (visually bugged, replaced by AGENT_ENTITY_ROTATION_REQ)
     2   short   Angle
 }
 ```

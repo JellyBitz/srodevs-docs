@@ -21,6 +21,6 @@ layout:
 * Direction `S > C`
 
 ```csharp
-4   uint    Entity.UniqueID
+4   uint    Entity.UID
 2   short   Entity.Angle
 ```

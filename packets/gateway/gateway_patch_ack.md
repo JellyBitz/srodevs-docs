@@ -20,7 +20,7 @@ if(Result == 0x02)
         {
             1   bool CanRead
             if(!CanRead)
-                break;
+                break
             
             4   uint    File.ID
             2   ushort  File.Name.Length
