@@ -43,7 +43,7 @@ if(Entity.HasDestination)
 }
 else
 {
-    1   byte    Entity.ControlType  // 1 = Walking, 0 = Spinning (visually bugged, replaced by AGENT_ENTITY_ROTATION_REQ)
+    1   byte    Entity.ControlType  // 1 = Walking, 0 = Spinning (visually bugged, replaced by AGENT_ENTITY_ROTATION_ACK)
     2   short   Entity.Angle
 }
 
