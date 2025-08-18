@@ -18,14 +18,15 @@ layout:
 # AGENT\_CHARACTER\_SELECTION\_RENAME\_ACK
 
 * Opcode `0xB450`
-* Direction `S > C`&#x20;
+* Direction `S > C`
 
 ```csharp
 1   byte    RenameAction
 1   byte    Result
 if(Result == 0x02)
 {
-    2   ushort  ErrorCode  // Depends on CharacterRename/GuildRename context
+
+    2   ushort  ErrorCode  // Depends on RenameAction, see below
 }
 ```
 
