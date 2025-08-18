@@ -37,7 +37,7 @@ if(Action == CharacterSelectionAction.Create)
 	4   uint    RefItemID	// EQUIP_SLOT_WEAPON
 }
 else if( Action == CharacterSelectionAction.Delete ||
-	 Action == CharacterSelectionAction.CheckName || 
+         Action == CharacterSelectionAction.CheckName || 
          Action == CharacterSelectionAction.Restore )
 {
 	2   ushort  Name.Length
