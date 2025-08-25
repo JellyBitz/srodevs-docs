@@ -26,15 +26,15 @@ if( ChatType == ChatType.All ||
     ChatType == ChatType.AllGM ||
     ChatType == ChatType.NPC )
 {
-    4   uint    Message.Sender.UniqueID
+    4   uint    Message.Sender.UID
 }
-else if( ChatType == ChatType.PM ||
+else if( ChatType == ChatType.Private ||
          ChatType == ChatType.Party ||
          ChatType == ChatType.Guild ||
          ChatType == ChatType.Global ||
          ChatType == ChatType.Stall ||
          ChatType == ChatType.Union ||
-         ChatType == ChatType.Accademy )        
+         ChatType == ChatType.Academy )        
 {
     2   ushort  Message.Sender.Name.Length
     *   string  Message.Sender.Name
@@ -58,7 +58,7 @@ public enum ChatType : byte
     ///<summary>
     /// $
     ///</summary>
-    PM = 2,
+    Private = 2,
     
     ///<summary>
     /// General (GM) chat visible to nearby entities
@@ -86,7 +86,7 @@ public enum ChatType : byte
     Notice = 7,
     
     ///<summary>
-    /// While in stall window
+    /// While stall window
     ///</summary>
     Stall = 9, 
     
@@ -103,6 +103,6 @@ public enum ChatType : byte
     ///<summary>
     /// &
     ///</summary>
-    Academy = 16,
+    Academy = 16
 }
 ```
