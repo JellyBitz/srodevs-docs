@@ -16,6 +16,7 @@
   * [Global Packets](packets/global/README.md)
     * [GLOBAL\_MODULE\_KEEP\_ALIVE](packets/global/global_module_keep_alive.md)
     * [GLOBAL\_MODULE\_IDENTIFICATION](packets/global/global_module_identification.md)
+    * [GLOBAL\_HANDSHAKE\_CHALLENGE](packets/global/global_handshake_challenge.md)
   * [Gateway Packets](packets/gateway/README.md)
     * [GATEWAY\_PATCH\_REQ](packets/gateway/gateway_patch_req.md)
     * [GATEWAY\_PATCH\_ACK](packets/gateway/gateway_patch_ack.md)

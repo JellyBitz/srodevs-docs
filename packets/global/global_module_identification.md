@@ -19,9 +19,10 @@ layout:
 
 * Opcode `0x2001`&#x20;
 * Direction `S > C`&#x20;
-* Encrypted
+* Encrypted (client only)
 
 ```csharp
-2   ushort  Module.Name.Length
-*   string  Module.Name
+2   ushort  Service.Name.Length
+*   string  Service.Name
+1   byte    Service.Type // 0 = Client, 1 = Server
 ```

@@ -29,11 +29,11 @@ layout:
 // | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 // |  Accumulated  |   Cumulated   |
 1   byte    TCBuffUpdateFlags
-if( (TCBuffUpdateFlags &#x26; TCBuffUpdateMask.Cumulated) == 1 )
+if( (TCBuffUpdateFlags &#x26; TCBuffUpdateMask.Cumulated) != 0 )
 {
 <strong>    4   uint    Cumulated
 </strong>}
-if( ((TCBuffUpdateFlags &#x26; TCBuffUpdateMask.Accumulated) >> 4) == 1 )
+if( (TCBuffUpdateFlags &#x26; TCBuffUpdateMask.Accumulated) != 0 )
 {
     4   uint    CharID // From TrainingCampData
     4   uint    Accumulated
