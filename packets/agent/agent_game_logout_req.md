@@ -17,7 +17,7 @@ layout:
 
 # AGENT\_GAME\_LOGOUT_REQ
 
-* Opcode `0x7005`&#x20;
+* Opcode `0x7005`;
 * Direction `C > S`
 
 ```csharp
