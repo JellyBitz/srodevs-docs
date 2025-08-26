@@ -36,7 +36,7 @@ Packets used when communicating with AgentServer (dispatched to ShardManager or 
 <tr><td>0xB005</td><td>S > C</td><td><a href="agent_game_logout_ack.md">AGENT_GAME_LOGOUT_ACK</a></td></tr>
 <tr><td>0x7006</td><td>C > S</td><td><a href="agent_game_logout_cancel_req.md">AGENT_GAME_LOGOUT_CANCEL_REQ</a></td></tr>
 <tr><td>0xB006</td><td>S > C</td><td><a href="agent_game_logout_cancel_ack.md">AGENT_GAME_LOGOUT_CANCEL_ACK</a></td></tr>
-<tr><td>0x300A</td><td>S > C</td><td>AGENT_GAME_LOGOUT_SUCCESS</td></tr>
+<tr><td>0x300A</td><td>S > C</td><td><a href="agent_game_logout_success.md">AGENT_GAME_LOGOUT_SUCCESS</a></td></tr>
 <tr><td>0x7025</td><td>C > S</td><td><a href="agent_chat_req.md">AGENT_CHAT_REQ</a></td></tr>
 <tr><td>0xB025</td><td>S > C</td><td><a href="agent_chat_ack.md">AGENT_CHAT_ACK</a></td></tr>
 <tr><td>0x3026</td><td>S > C</td><td><a href="agent_chat_update.md">AGENT_CHAT_UPDATE</a></td></tr>
