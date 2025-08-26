@@ -27,7 +27,7 @@ Packets used when communicating with AgentServer (dispatched to ShardManager or 
 <tr><td>0x3013</td><td>S > C</td><td>AGENT_CHARACTER_DATA_CHUNK</td></tr>
 <tr><td>0x34A6</td><td>S > C</td><td>AGENT_CHARACTER_DATA_END</td></tr>
 <tr><td>0x3056</td><td>S > C</td><td><a href="agent_character_exp_update.md">AGENT_CHARACTER_EXP_UPDATE</a></td></tr>
-<tr><td>0x304E</td><td>S > C</td><td>AGENT_CHARACTER_INFO_UPDATE</td></tr>
+<tr><td>0x304E</td><td>S > C</td><td><a href="agent_character_info_update.md">AGENT_CHARACTER_INFO_UPDATE</a></td></tr>
 <tr><td>0x70A7</td><td>C > S</td><td><a href="agent_character_bodystate_req.md">AGENT_CHARACTER_BODYSTATE_REQ</a></td></tr>
 <tr><td>0x3012</td><td>C > S</td><td>AGENT_GAME_READY</td></tr>
 <tr><td>0x300C</td><td>S > C</td><td>AGENT_GAME_NOTIFY</td></tr>
