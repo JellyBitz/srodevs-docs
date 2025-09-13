@@ -13,6 +13,7 @@
   * [GATEPORT](file-formats/gateport.md)
   * [SILKCFG](file-formats/silkcfg.md)
   * [GMWPForT](file-formats/gmwpfort.md)
+  * [WndPos](file-formats/wndpos.md)
 * [Packets](packets/README.md)
   * [Global Packets](packets/global/README.md)
     * [GLOBAL\_MODULE\_KEEP\_ALIVE](packets/global/global_module_keep_alive.md)
