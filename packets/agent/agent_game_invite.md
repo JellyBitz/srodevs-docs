@@ -1,4 +1,21 @@
-# AGENT_GAME_INVITE
+---
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+---
+
+# AGENT\_GAME\_INVITE
 
 * Opcode `0x3080`
 * Direction `S > C`
@@ -13,13 +30,16 @@ if( Type == requestType.PartyCreation || Type == requestType.PartyInvitation )
     1   byte   setupFlag
 }
 ```
-* Opcode `0x3080`
-* Direction `C > S`
-```csharp
 
+* Direction `C > S`
+
+```csharp
 ```
+
 ***
+
 ### requestType
+
 ```csharp
 public enum requestType : byte
 {
@@ -34,7 +54,9 @@ public enum requestType : byte
 	GuildWar = 10
 }
 ```
+
 ### setupFlag
+
 ```csharp
 [Flags]
 public enum Setup : byte
@@ -44,4 +66,3 @@ public enum Setup : byte
 	AnyoneCanInvite = 4
 }
 ```
-

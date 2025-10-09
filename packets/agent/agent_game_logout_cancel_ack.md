@@ -1,17 +1,20 @@
-# AGENT_LOGOUT_CANCEL
+# AGENT\_GAME\_LOGOUT\_CANCEL\_ACK
 
 * Opcode `0xB006`
 * Direction `S > C`
 
 ```csharp
-1   byte    result
-if(result == 2)
+1   byte    Result
+if (Result == 2)
 {
-    2   ushort  errorCode
+    2   ushort  LogoutErrorCode
 }
 ```
+
 ***
-### errorCode
+
+### LogoutErrorCode
+
 ```csharp
 public enum LogoutErrorCode : ushort
 {

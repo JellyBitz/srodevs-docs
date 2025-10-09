@@ -15,38 +15,28 @@ layout:
     visible: true
 ---
 
-# AGENT_GAME_LOGOUT_ACK
+# AGENT\_GAME\_LOGOUT\_ACK
 
 * Opcode `0xB005`
 * Direction `S > C`
 
 ```csharp
-1   byte    result
-if(result == 1)
+1   byte    Result
+if (Result == 1)
 {
     1   byte    Countdown   //in seconds
     1   byte    LogoutMode
 }
-else if(result == 2)
+else if (Result == 2)
 {
-    2   ushort  errorCode
+    2   ushort  LogoutErrorCode
 }
 ```
 
 ***
-### LogoutMode
-```csharp
-   /// <summary>
-    /// Go to Process.CPSQuit
-    /// </summary>
-    Exit = 1, 
-    
-    /// <summary>
-    /// Go to Process.CPSRestart
-    /// </summary>
-    Restart = 2,
-```
-### errorCode
+
+### LogoutErrorCode
+
 ```csharp
 public enum LogoutErrorCode : ushort
 {
@@ -61,3 +51,4 @@ public enum LogoutErrorCode : ushort
 	UIIT_MSG_LOGOUT_ERR_CANT_LOGOUT_WHILE_TELEPORT_WORKING = 0x802
 }
 ```
+
