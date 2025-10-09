@@ -58,6 +58,7 @@
     * [AGENT\_CHAT\_REQ](packets/agent/agent_chat_req.md)
     * [AGENT\_CHAT\_ACK](packets/agent/agent_chat_ack.md)
     * [AGENT\_CHAT\_UPDATE](packets/agent/agent_chat_update.md)
+    * [AGENT\_CHAT\_RESTRICT](packets/agent/agent_chat_restrict.md)
     * [AGENT\_ENTITY\_MOVEMENT\_REQ](packets/agent/agent_entity_movement_req.md)
     * [AGENT\_ENTITY\_MOVEMENT\_ACK](packets/agent/agent_entity_movement_ack.md)
     * [AGENT\_ENTITY\_ROTATION\_REQ](packets/agent/agent_entity_rotation_req.md)
