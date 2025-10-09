@@ -40,12 +40,12 @@ if(Result == 1)
             foreach(TargetCount)
             {
                 4   uint    Target.UID
-                4   uint    Target.SkillEffectFlag
-                if( Target.SkillEffectFlag & SkillEffectFlag.Block ||
-                    Target.SkillEffectFlag & SkillEffectFlag.Cancel )
+                4   uint    Target.SkillEffectFlags
+                if( Target.SkillEffectFlags & SkillEffectFlag.Block ||
+                    Target.SkillEffectFlags & SkillEffectFlag.Cancel )
                     continue
 
-                1   byte    Target.SkillDamageFlag
+                1   byte    Target.SkillDamageFlags
                 3   uint    Target.Damage
                 4   uint    unkUInt01
             }

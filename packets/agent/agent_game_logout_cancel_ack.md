@@ -1,3 +1,20 @@
+---
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+---
+
 # AGENT\_GAME\_LOGOUT\_CANCEL\_ACK
 
 * Opcode `0xB006`
@@ -13,19 +30,8 @@ if (Result == 2)
 
 ***
 
-### LogoutErrorCode
+{% hint style="info" %}
+See also:
 
-```csharp
-public enum LogoutErrorCode : ushort
-{
-	/// <summary>
-	/// Cannot close the game during combat.
-	/// </summary>
-	UIIT_MSG_LOGOUT_ERR_CANT_LOGOUT_IN_BATTLE_STATE = 0x801
-	
-	/// <summary>
-	/// Cannot exit the game while teleporting.
-	/// </summary>
-	UIIT_MSG_LOGOUT_ERR_CANT_LOGOUT_WHILE_TELEPORT_WORKING = 0x802
-}
-```
+* [LogoutErrorCode](agent_game_logout_ack.md#logouterrorcode)
+{% endhint %}

@@ -52,3 +52,8 @@ public enum LogoutErrorCode : ushort
 }
 ```
 
+{% hint style="info" %}
+See also:
+
+* [LogoutMode](agent_game_logout_req.md#logoutmode)
+{% endhint %}

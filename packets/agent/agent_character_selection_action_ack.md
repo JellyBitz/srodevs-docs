@@ -81,3 +81,11 @@ else if(Result == 0x02)
 }
 
 ```
+
+***
+
+{% hint style="info" %}
+See also:
+
+* [CharacterSelectionAction](agent_character_selection_action_req.md#characterselectionaction)
+{% endhint %}

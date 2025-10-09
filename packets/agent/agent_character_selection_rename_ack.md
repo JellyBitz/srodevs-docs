@@ -25,8 +25,7 @@ layout:
 1   byte    Result
 if(Result == 0x02)
 {
-
-    2   ushort  ErrorCode  // Depends on RenameAction, see below
+    2   ushort  RenameErrorCode  // Depends on RenameAction, see below
 }
 ```
 
@@ -71,3 +70,9 @@ public enum CharacterSelectionRenameErrorCode : ushort
     #endregion GuildRename
 }
 ```
+
+{% hint style="info" %}
+See also:
+
+* [CharacterSelectionRenameAction](agent_character_selection_rename_req.md#characterselectionrenameaction)
+{% endhint %}

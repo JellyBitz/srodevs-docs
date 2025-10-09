@@ -24,7 +24,7 @@ layout:
 1   byte    Result
 if(Result == 2)
 {
-    2   ushort  ErrorCode    
+    2   ushort  ChatErrorCode    
 }
 1   byte    ChatType
 1   byte    ChatWindow.RowIndex
@@ -72,3 +72,9 @@ if(Result == 2)
     UIIT_MSG_GUILD_UNION_CHAT_LIMIT = 0x200E
 }
 </code></pre>
+
+{% hint style="info" %}
+See also:
+
+* [ChatType](agent_chat_req.md#chattype)
+{% endhint %}
