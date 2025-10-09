@@ -33,9 +33,9 @@ for (int yBlock = 0; yBlock < 6; yBlock++)
             }
         }
 
-        1   byte    Block.WaterType        // 0xFF = None, 0 = Water, 1 = Ice
-        1   byte    Block.WaterWaveID      // See "map/water/wave?.ddj"
-        4   float   Block.WaterHeight
+        1   sbyte   Block.PlaneType        // -1 = Normal, 0 = Water, 1 = Ice
+        1   byte    Block.WaterWaveID      // Related to water movement, speed maybe?
+        4   float   Block.PlaneHeight
         
         // Each block has 16 x 16 MapMeshTiles
         for (int z = 0; z < 16; z++)
@@ -58,9 +58,9 @@ for (int yBlock = 0; yBlock < 6; yBlock++)
 ```c
 #pragma pattern_limit 4294967296
 
-enum WaterType : u8
+enum PlaneType : s8
 {
-    None = 0xFF,
+    Normal = u8(-1),
     Water = 0,
     Ice = 1
 };
@@ -101,9 +101,9 @@ struct MapBlock
     u32 Flag;
     u16 EnvironmentID;
     MapBlockVertex Vertices[17*17];
-    WaterType WaterType;
+    PlaneType PlaneType;
     u8 WaterWaveID;
-    float WaterHeight;
+    float PlaneHeight;
     MapTileFlag Tiles[16*16];
     float HeightMax;
     float HeightMin;
