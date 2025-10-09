@@ -21,48 +21,74 @@ layout:
 * Direction `S > C`
 
 ```csharp
-1   byte    requestType
-4   uint    playerUniqueId
+1   byte    PlayerRequestType
+1   uint    Player.UID
 
-
-if( Type == requestType.PartyCreation || Type == requestType.PartyInvitation )
+if ( PlayerRequestType == PlayerRequestType.PartyCreation || 
+     PlayerRequestType == PlayerRequestType.PartyInvitation )
 {
-    1   byte   setupFlag
+    1   byte    PartySetupFlags
 }
 ```
 
 * Direction `C > S`
 
 ```csharp
+// Accept
+1   byte    PlayerResponseType       //1 (Option)
+1   byte    PlayerResponseOption     //1 (Accept)
+```
+
+```csharp
+// Cancel
+if ( PlayerRequestType == PlayerRequestType.PartyCreation || 
+     PlayerRequestType == PlayerRequestType.PartyInvitation )
+{
+    1   byte    PlayerResponseType   //2 (Error)
+    1   ushort  ErrorCode            //11276
+} 
+else
+{
+    1   byte    PlayerResponseType   //1 (Option)
+    1   byte    PlayerResponseOption //2 (Cancel)
+}
 ```
 
 ***
 
-### requestType
+### PlayerRequestType
 
 ```csharp
-public enum requestType : byte
+public enum PlayerRequestType : byte
 {
-	ExchangeRequest = 1,
-	PartyCreation = 2,
-	PartyInvitation = 3,
-	Resurrection = 4,
-	Resurrection = 8,
-	GuildInvitation = 5,
-	UnionInvitation = 6,
-	AcademyInvitation = 9,
-	GuildWar = 10
+    ExchangeRequest = 1,
+    PartyCreation = 2,
+    PartyInvitation = 3,
+    Resurrection = 4,
+    GuildInvitation = 5,
+    UnionInvitation = 6,
+    Resurrection = 8,
+    AcademyInvitation = 9,
+    GuildWar = 10
 }
 ```
 
-### setupFlag
+### PlayerResponseType
 
 ```csharp
-[Flags]
-public enum Setup : byte
+public enum PlayerResponseType : byte
 {
-	ExpShared = 1,
-	ItemShared = 2,
-	AnyoneCanInvite = 4
+    Option = 1,
+    Error = 2,
+}
+```
+
+### PlayerResponseOption
+
+```csharp
+public enum PlayerResponseOption : byte
+{
+    Accept = 1,
+    Cancel = 2,
 }
 ```

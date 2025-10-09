@@ -22,26 +22,26 @@ layout:
 
 ```csharp
 1   byte    UpdateType
-if(updateType == CharacterInfoUpdateType.Gold)
+if(UpdateType == CharacterInfoUpdateType.Gold)
 {
     8   ulong   Gold
     1   bool    IsDisplayed  // Displays UIIT_MSG_STATE_GAIN_GOLD
 }
-else if(updateType == CharacterInfoUpdateType.SP)
+else if(UpdateType == CharacterInfoUpdateType.SP)
 {
     4   uint    SP
     1   bool    IsDisplayed // Displays UIIT_STT_SKILL_POINT_RECOVER_RESULT or UIIT_MSG_JSERR_SINCE_YOU_DIE_IN_MURDERER_SP_DEPRIVED_BY_SERVER
 }
-else if(updateType == CharacterInfoUpdateType.STP)
+else if(UpdateType == CharacterInfoUpdateType.STP)
 {
     2   ushort  StatPoints
 }
-else if(updateType == CharacterInfoUpdateType.HWAN)
+else if(UpdateType == CharacterInfoUpdateType.HWAN)
 {
     1   byte    HwanPoints
     4   uint    SourceGID    // where particles are coming from
 }
-else if(updateType == CharacterInfoUpdateType.EGYPT_AP)
+else if(UpdateType == CharacterInfoUpdateType.EGYPT_AP)
 {
     //UIIT_STT_EGYPT_AP_POINT_RECOVER_RESULT
     4   uint    APPoint
