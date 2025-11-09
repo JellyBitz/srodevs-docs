@@ -29,7 +29,7 @@ if(UpdateType == CharacterInfoUpdateType.Gold)
 }
 else if(UpdateType == CharacterInfoUpdateType.SP)
 {
-    4   uint    SP
+    4   uint    SkillPoints
     1   bool    IsDisplayed // Displays UIIT_STT_SKILL_POINT_RECOVER_RESULT or UIIT_MSG_JSERR_SINCE_YOU_DIE_IN_MURDERER_SP_DEPRIVED_BY_SERVER
 }
 else if(UpdateType == CharacterInfoUpdateType.STP)
@@ -39,12 +39,11 @@ else if(UpdateType == CharacterInfoUpdateType.STP)
 else if(UpdateType == CharacterInfoUpdateType.HWAN)
 {
     1   byte    HwanPoints
-    4   uint    SourceGID    // where particles are coming from
+    4   uint    SourceGID    // Where particles are coming from
 }
 else if(UpdateType == CharacterInfoUpdateType.EGYPT_AP)
 {
-    //UIIT_STT_EGYPT_AP_POINT_RECOVER_RESULT
-    4   uint    APPoint
+    4   uint    APPoints
 }
 ```
 
@@ -64,15 +63,21 @@ public enum CharacterInfoUpdateType : byte
     /// New value from skill points to spend
     ///</summary>
     SP = 2,
-  
-    STP = 3, // Stat points
+    
+    ///<summary>
+    /// Amount stat points obtained
+    ///</summary>
+    STP = 3,
 
     ///<summary>
     /// New value for berserker mode (5 points = Ready)
     ///</summary>
     HWAN = 4,
     
-    // UIIT_STT_EGYPT_AP_POINT_RECOVER_RESULT
+    ///<summary>
+    ///<para>UIIT_STT_EGYPT_AP_POINT_RECOVER_RESULT</para>
+    ///[%d]of AP points gained.
+    ///</summary>
     EGYPT_AP = 16,
 }
 ```

@@ -22,7 +22,7 @@ layout:
 
 ```csharp
 1   byte    PlayerRequestType
-1   uint    Player.UID
+4   uint    Player.UID
 
 if ( PlayerRequestType == PlayerRequestType.PartyCreation || 
      PlayerRequestType == PlayerRequestType.PartyInvitation )
@@ -33,19 +33,25 @@ if ( PlayerRequestType == PlayerRequestType.PartyCreation ||
 
 * Direction `C > S`
 
+{% tabs %}
+{% tab title="Accept" %}
 ```csharp
-// Accept
+/// Accept
+
 1   byte    PlayerResponseType       //1 (Option)
 1   byte    PlayerResponseOption     //1 (Accept)
 ```
+{% endtab %}
 
+{% tab title="Cancel" %}
 ```csharp
-// Cancel
+/// Cancel
+
 if ( PlayerRequestType == PlayerRequestType.PartyCreation || 
      PlayerRequestType == PlayerRequestType.PartyInvitation )
 {
     1   byte    PlayerResponseType   //2 (Error)
-    1   ushort  ErrorCode            //11276
+    2   ushort  ErrorCode            //11276
 } 
 else
 {
@@ -53,6 +59,8 @@ else
     1   byte    PlayerResponseOption //2 (Cancel)
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ***
 

@@ -40,7 +40,7 @@ if(Result == 1)
                 continue
 
             1   byte    Target.SkillDamageFlags
-            3   uint    Target.Damage
+            3   uint    Target.Damage // (uint) = (byte) + ((ushort) << 8)
             4   uint    unkUInt01
         }
     }
