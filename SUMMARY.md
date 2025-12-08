@@ -6,6 +6,7 @@
   * [JMXVBSK](file-formats/jmxvbsk.md)
   * [JMXVBAN](file-formats/jmxvban.md)
   * [JMXVDDJ](file-formats/jmxvddj.md)
+  * [JMXVCPD](file-formats/jmxvcpd.md)
   * [JMXVMFO](file-formats/jmxvmfo.md)
   * [JMXV2DTI](file-formats/jmxv2dti.md)
   * [JMXVMAPM](file-formats/jmxvmapm.md)
