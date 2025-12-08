@@ -9,6 +9,7 @@
   * [JMXVMFO](file-formats/jmxvmfo.md)
   * [JMXV2DTI](file-formats/jmxv2dti.md)
   * [JMXVMAPM](file-formats/jmxvmapm.md)
+  * [JMXVMAPT](file-formats/jmxvmapt.md)
   * [DIVISIONINFO](file-formats/divisioninfo.md)
   * [GATEPORT](file-formats/gateport.md)
   * [SILKCFG](file-formats/silkcfg.md)
