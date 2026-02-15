@@ -1,19 +1,5 @@
 ---
 hidden: true
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
 ---
 
 # JMXVCPD
@@ -21,7 +7,7 @@ layout:
 Represents a resource compound of others resources, all merged in the same location.
 
 {% tabs %}
-{% tab title="Structure" %}
+{% tab title="File Structure" %}
 ```csharp
 12  string  Signature                     //JMXVCPD 0101
 4   uint    Header.CollisionOffset

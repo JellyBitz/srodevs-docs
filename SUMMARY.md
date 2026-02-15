@@ -9,6 +9,7 @@
   * [JMXVCPD](file-formats/jmxvcpd.md)
   * [JMXVMFO](file-formats/jmxvmfo.md)
   * [JMXV2DTI](file-formats/jmxv2dti.md)
+  * [JMXVNVM](file-formats/jmxvnvm.md)
   * [JMXVMAPM](file-formats/jmxvmapm.md)
   * [JMXVMAPT](file-formats/jmxvmapt.md)
   * [DIVISIONINFO](file-formats/divisioninfo.md)
