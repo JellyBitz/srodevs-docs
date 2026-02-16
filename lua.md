@@ -19,13 +19,31 @@
 
 ## API Functions
 
+#### LuaInsertEvent
+
+Registers a function to be used as an event.
+
+| Parameter    | Type     | Description                                 |
+| ------------ | -------- | ------------------------------------------- |
+| Type         | `int`    | (1)                                         |
+| Filename     | `string` | Filename with the function to be registered |
+| FunctionName | `string` | Function name to be registered              |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+LuaInsertEvent(1,"event.sct","QEV_LEVEL_CH_POTION")
+```
+{% endtab %}
+{% endtabs %}
+
 #### LuaInsertQuest
 
 Registers a function to be used for quests.
 
 | Parameter    | Type     | Description                                 |
 | ------------ | -------- | ------------------------------------------- |
-| TypeId       | `int`    |                                             |
+| Type         | `int`    | (1)                                         |
 | Filename     | `string` | Filename with the function to be registered |
 | FunctionName | `string` | Function name to be registered              |
 
@@ -49,7 +67,74 @@ Links the NPC to execute the current function.
 {% tabs %}
 {% tab title="Example" %}
 ```lua
-LuaInsertNpc(3,"NPC_CH_EVENT_KISAENG1","NPC_CH_EVENT_KISAENG2","NPC_CH_EVENT_KISAENG3")
+LuaInsertNpc(3,
+    "NPC_CH_EVENT_KISAENG1",
+    "NPC_CH_EVENT_KISAENG2",
+    "NPC_CH_EVENT_KISAENG3"
+)
 ```
 {% endtab %}
 {% endtabs %}
+
+#### LuaInsertDropItem
+
+Registers an item drop globally for all monsters.
+
+| Parameter     | Type                           | Description                    |
+| ------------- | ------------------------------ | ------------------------------ |
+| Count         | `int`                          | Number of NPCs to be linked    |
+| Codenames     | `*args` as `string`            | Codenames from NPCs            |
+| Probabilities | `*args` as `int` in `[0, 100]` | Drop probability in percentage |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+LuaInsertDropItem(2,
+    "ITEM_ETC_MOON_GEM",100,
+    "ITEM_ETC_MOON_POT",100
+)
+```
+{% endtab %}
+{% endtabs %}
+
+#### SetEventOne
+
+Set text from the first talking action at NPC.
+
+| Parameter | Type     | Description                     |
+| --------- | -------- | ------------------------------- |
+| EventID   | `int`    | Unique identifier for the event |
+| Codename  | `string` | Codename for text reference     |
+| Unk01     | `int`    | (1)                             |
+| Unk02     | `int`    | (1)                             |
+| Unk03     | `int`    | (1)                             |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+EventID = 40008
+SetEventOne(EventID,"SN_QEV_LEVEL_CH_POTION",1,1,0)
+```
+{% endtab %}
+{% endtabs %}
+
+#### SetEventTwo
+
+Set a text list from all possible talking actions at NPC.
+
+| Parameter | Type                | Description                   |
+| --------- | ------------------- | ----------------------------- |
+| Count     | `int`               | Number of codenames to be set |
+| Codenames | `*args` as `string` | Codenames for text references |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+SetEventTwo(2,
+    "SN_TALK_QEV_LEVEL_CH_POTION_B",
+    "SN_TALK_COMMON_EXIT"
+)
+```
+{% endtab %}
+{% endtabs %}
+
