@@ -494,6 +494,48 @@ end
 {% endtab %}
 {% endtabs %}
 
+#### LuaGetPlayerLevel
+
+Gets the current level of the player talking.
+
+| Return | Type  | Description                 |
+| ------ | ----- | --------------------------- |
+| Level  | `int` | Current level of the player |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+level = LuaGetPlayerLevel()
+-- Confirm player can use items degree 10
+if level >= 90 and level <= 100 then
+    -- code here
+end
+```
+{% endtab %}
+{% endtabs %}
+
+#### LuaGetPlayerGender
+
+Gets the gender of the player talking.
+
+| Return     | Type  | Description                   |
+| ---------- | ----- | ----------------------------- |
+| GenderType | `int` | Gender type[^5] of the player |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+gender = LuaGetPlayerGender()
+-- Confirm player gender
+if gender == 1 then
+    -- (Male) code here
+else
+    -- (Female) code here
+end
+```
+{% endtab %}
+{% endtabs %}
+
 [^1]: ```lua
     MENUTYPE = {
         GREETING = 5,
@@ -520,3 +562,10 @@ end
     ```
 
 [^4]: LUA list index paradigm starts from 1
+
+[^5]: ```lua
+    GENDER = {
+        FEMALE = 0,
+        MALE = 1
+    }
+    ```
