@@ -142,10 +142,10 @@ SetEventTwo(2,
 
 Register items to be rewarded or exchanged in the process.
 
-| Parameter | Type                | Description                   |
-| --------- | ------------------- | ----------------------------- |
-| Count     | `int` in `[0, 120]` | Number of codenames to be set |
-| Codenames | `*args` as `string` | Codenames for text references |
+| Parameter | Type                | Description                          |
+| --------- | ------------------- | ------------------------------------ |
+| Count     | `int` in `[0, 120]` | Number of items to be set for reward |
+| Codenames | `*args` as `string` | Codename of the items                |
 
 {% tabs %}
 {% tab title="Example" %}
@@ -379,6 +379,7 @@ Check inventory items from player talking, used also to count.
 | Unk01        | `int`    | `0`                              |
 | ItemCodename | `string` | Codename of the item to search   |
 | SearchType   | `int`    | Type[^2] of the searching method |
+| Unk01        | `int`    | `-1,0` Maybe default result?     |
 
 | Return       | Type  | Description                                     |
 | ------------ | ----- | ----------------------------------------------- |
@@ -401,6 +402,98 @@ end
 {% endtab %}
 {% endtabs %}
 
+#### LuaGetCountEmptyInventory
+
+Counts all empty slots found in the inventory of the player talking.
+
+| Parameter | Type  | Description                                |
+| --------- | ----- | ------------------------------------------ |
+| Unk01     | `int` | `0` Maybe slot offset where search begins? |
+| Unk02     | `int` | `-1` Maybe default result?                 |
+
+| Return | Type  | Description                       |
+| ------ | ----- | --------------------------------- |
+| Count  | `int` | Count of empty slots in inventory |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+emptySlotCount = LuaGetCountEmptyInventory(0,-1)
+-- Confirm there is an empty slot
+if emptySlotCount > 1 then
+    -- code here
+end
+```
+{% endtab %}
+{% endtabs %}
+
+#### LuaAddItem\_EXT
+
+Add an item to the inventory of the player talking.
+
+| Parameter      | Type              | Description                                                                             |
+| -------------- | ----------------- | --------------------------------------------------------------------------------------- |
+| EventID        | `int`             | Unique identifier for the event                                                         |
+| Unk01          | `int`             | `0`                                                                                     |
+| Amount         | `int`             | Amount of items                                                                         |
+| ReasonType     | `int`             | Reason type[^3] of adding                                                               |
+| RandomizeStats | `int` in `[0, 1]` | Indicator to apply random stats if item is equipable                                    |
+| Unk02          | `int`             | `0` Maybe plus?                                                                         |
+| ItemIndex      | `int`             | Index[^4] of the item list set at [InsertPayItemCodeName](lua.md#insertpayitemcodename) |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+InsertPayItemCodeName(3,
+    "ITEM_ETC_E051123_AGILITY_SCROLL", -- index: 1
+    "ITEM_ETC_E051123_EVATION_SCROLL", -- index: 2
+    "ITEM_ETC_E051123_HIT_SCROLL" -- index: 3
+)
+
+-- ...
+
+emptySlotCount = LuaGetCountEmptyInventory(0,-1)
+-- Confirm there is an empty slot
+if emptySlotCount > 1 then
+    -- Add (5) pieces of "ITEM_ETC_E051123_EVATION_SCROLL"
+    index = 2
+    pieces = 5
+    LuaAddItem_EXT(EventID,0,pieces,SYSOP_REASON_EVENT,0,0,index)
+end
+```
+{% endtab %}
+{% endtabs %}
+
+#### LuaDelItem\_EXT
+
+Delete an item from the inventory of the player talking.
+
+| Parameter  | Type  | Description                 |
+| ---------- | ----- | --------------------------- |
+| Unk01      | `int` | `0`                         |
+| Slot       | `int` | Slot of the item            |
+| Amount     | `int` | Amount of items             |
+| ReasonType | `int` | Reason type[^3] of deletion |
+| Unk02      | `int` | `0`                         |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+function GetSlotFromItem(Codename)
+    return LuaEventInQuireSameItem(0,Codename,INQUIRE_SAMEITEM_OP_FIND_FIRST_SLOT,-1)
+end
+
+-- ...
+
+slot = GetSlotFromItem("ITEM_CH_BLADE_01_A")
+if slot >= 0 then
+    -- item found
+    LuaDelItem_EXT(0,slot,1,SYSOP_REASON_DRAINED,0)
+end
+```
+{% endtab %}
+{% endtabs %}
+
 [^1]: ```lua
     MENUTYPE = {
         GREETING = 5,
@@ -414,3 +507,16 @@ end
     1 = INQUIRE_SAMEITEM_OP_COUNT_FIRST_ITEM -- Count stack from first inventory slot to find
     2 = INQUIRE_SAMEITEM_OP_COUNT_ALL_SAMEITEM -- Count all inventory items found
     ```
+
+[^3]: ```lua
+    0 = SYSOP_REASON_QUEST
+    1 = SYSOP_REASON_EVENT
+    2 = SYSOP_REASON_DRAINED
+    3 = SYSOP_REASON_WITHDRAW
+    4 = SYSOP_REASON_ALCHEMY_REINFORCE
+    5 = SYSOP_REASON_FLEAMARKET_NETWORK
+    6 = SYSOP_REASON_SIEGE
+    255 = SYSOP_REASON_INVALID
+    ```
+
+[^4]: LUA list index paradigm starts from 1
