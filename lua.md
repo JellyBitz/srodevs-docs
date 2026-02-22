@@ -254,12 +254,12 @@ npcUID = LuaNpcHandlerNum()
 
 Sets up the dialog and talking actions from [SetEventTwo](lua.md#seteventtwo) to be shown at the next callback from [LuaInsertFunctionStringList](lua.md#luainsertfunctionstringlist).
 
-| Parameter     | Type  | Description                                                                                                               |
-| ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------- |
-| Type          | `int` | <p><code>MENUTYPE_GREETING = 5</code><br><code>MENUTYPE_ACHIEVED = 3</code><br><code>MENUTYPE_NOT_ACHIEVED = 1</code></p> |
-| ActionsOffset | `int` | Index from actions where the menu begins                                                                                  |
-| ActionsLength | `int` | Number of actions to show at menu, starting from the offset                                                               |
-| NpcUID        | `int` | NPC unique identifier to use                                                                                              |
+| Parameter     | Type  | Description                                                 |
+| ------------- | ----- | ----------------------------------------------------------- |
+| Type          | `int` | Dialog type[^1] to be shown                                 |
+| ActionsOffset | `int` | Index from actions where the menu begins                    |
+| ActionsLength | `int` | Number of actions to show at menu, starting from the offset |
+| NpcUID        | `int` | NPC unique identifier to use                                |
 
 {% tabs %}
 {% tab title="Example" %}
@@ -369,3 +369,48 @@ LuaTerminateMenu()
 ```
 {% endtab %}
 {% endtabs %}
+
+#### LuaEventInQuireSameItem
+
+Check inventory items from player talking, used also to count.
+
+| Parameter    | Type     | Description                      |
+| ------------ | -------- | -------------------------------- |
+| Unk01        | `int`    | `0`                              |
+| ItemCodename | `string` | Codename of the item to search   |
+| SearchType   | `int`    | Type[^2] of the searching method |
+
+| Return       | Type  | Description                                     |
+| ------------ | ----- | ----------------------------------------------- |
+| SearchResult | `int` | Item slot or count, depends on searching method |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+function GetSlotFromItem(Codename)
+    return LuaEventInQuireSameItem(0,Codename,INQUIRE_SAMEITEM_OP_FIND_FIRST_SLOT,-1)
+end
+
+-- ...
+
+slot = GetSlotFromItem("ITEM_CH_BLADE_01_A")
+if slot >= 0 then
+    -- item found
+end
+```
+{% endtab %}
+{% endtabs %}
+
+[^1]: ```lua
+    MENUTYPE = {
+        GREETING = 5,
+        ACHIEVED = 3,
+        ACHIEVED = 1
+    }
+    ```
+
+[^2]: ```lua
+    0 = INQUIRE_SAMEITEM_OP_FIND_FIRST_SLOT -- First inventory slot to find
+    1 = INQUIRE_SAMEITEM_OP_COUNT_FIRST_ITEM -- Count stack from first inventory slot to find
+    2 = INQUIRE_SAMEITEM_OP_COUNT_ALL_SAMEITEM -- Count all inventory items found
+    ```
