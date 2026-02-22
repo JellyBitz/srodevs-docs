@@ -252,11 +252,11 @@ npcUID = LuaNpcHandlerNum()
 
 #### LuaShowMenu
 
-Sets up the dialog and talking actions from [SetEventTwo](lua.md#seteventtwo) to be shown at the next callback from [LuaInsertFunctionStringList](lua.md#luainsertfunctionstringlist).
+Sets dialog and talking actions from [SetEventTwo](lua.md#seteventtwo) to be shown at the next callback from [LuaInsertFunctionStringList](lua.md#luainsertfunctionstringlist).
 
 | Parameter     | Type  | Description                                                 |
 | ------------- | ----- | ----------------------------------------------------------- |
-| Type          | `int` | Dialog type[^1] to be shown                                 |
+| Type          | `int` | Menu type[^1] dialog to be shown                            |
 | ActionsOffset | `int` | Index from actions where the menu begins                    |
 | ActionsLength | `int` | Number of actions to show at menu, starting from the offset |
 | NpcUID        | `int` | NPC unique identifier to use                                |
@@ -540,7 +540,7 @@ end
     MENUTYPE = {
         GREETING = 5,
         ACHIEVED = 3,
-        ACHIEVED = 1
+        NOT_ACHIEVED = 1
     }
     ```
 
