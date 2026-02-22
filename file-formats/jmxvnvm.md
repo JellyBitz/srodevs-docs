@@ -35,9 +35,9 @@ foreach(ObjectCount)
     foreach (LinkedEdgeCount)
     {
         // Values ​​of (-1) are invalid entries, removed perhaps
-        2   short   LinkedEdge.OtherMapObjectIndex
+        2   short   LinkedEdge.OtherObjectIndex
         2   short   LinkedEdge.OtherEdgeIndex
-        2   short   LinkedEdge.EdgeIndex     // See "PrimMeshNavEdge" from JMXVBMS
+        2   short   LinkedEdge.EdgeIndex  // See "PrimMeshNavEdge" from JMXVBMS
     }
 }
 

@@ -120,12 +120,12 @@ SetEventOne(EventID,"SN_QEV_LEVEL_CH_POTION",1,1,0)
 
 #### SetEventTwo
 
-Set a text list from all possible talking actions at NPC.
+Set a list for all possible talking actions at NPC.
 
-| Parameter | Type                | Description                   |
-| --------- | ------------------- | ----------------------------- |
-| Count     | `int`               | Number of codenames to be set |
-| Codenames | `*args` as `string` | Codenames for text references |
+| Parameter       | Type                | Description                   |
+| --------------- | ------------------- | ----------------------------- |
+| Count           | `int`               | Number of codenames to be set |
+| ActionCodenames | `*args` as `string` | Codenames for text references |
 
 {% tabs %}
 {% tab title="Example" %}
@@ -224,9 +224,99 @@ LuaInsertFunctionStringList(1,"CONVERSATION_SINGLE","KISAENG_LETTER_THANKS_Conve
 -- ...
 
 function KISAENG_LETTER_THANKS_Conversation(ConversationState,NpcCodename)
-    --- code here
+    if ConversationState == CONVERSATION_START then
+        --- code here
+    elseif ConversationState == CONVERSATION_RESPONSE then
+        --- code here
+    end
 end
 ```
 {% endtab %}
 {% endtabs %}
 
+#### LuaNpcHandlerNum
+
+Returns the unique identifier from NPC executing the talking process.
+
+| Return | Type  | Description           |
+| ------ | ----- | --------------------- |
+| NpcUID | `int` | NPC unique identifier |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+npcUID = LuaNpcHandlerNum()
+```
+{% endtab %}
+{% endtabs %}
+
+#### LuaShowMenu
+
+Sets up the dialog and talking actions from [SetEventTwo](lua.md#seteventtwo) to be shown at the next callback from [LuaInsertFunctionStringList](lua.md#luainsertfunctionstringlist).
+
+| Parameter     | Type  | Description                                                                                                               |
+| ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------- |
+| Type          | `int` | <p><code>MENUTYPE_GREETING = 5</code><br><code>MENUTYPE_ACHIEVED = 3</code><br><code>MENUTYPE_NOT_ACHIEVED = 1</code></p> |
+| ActionsOffset | `int` | Index from actions where the menu begins                                                                                  |
+| ActionsLength | `int` | Number of actions to show at menu, starting from the offset                                                               |
+| NpcUID        | `int` | NPC unique identifier to use                                                                                              |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+SetEventTwo(3,
+    "SN_TALK_QEV_LEVEL_CH_POTION_A", -- index: 0
+    "SN_TALK_QEV_LEVEL_CH_POTION_B", -- index: 1
+    "SN_TALK_COMMON_EXIT" -- index: 2
+)
+
+-- ...
+
+MENUTYPE_GREETING = 5
+-- Show Menu as => [ SN_TALK_QEV_LEVEL_CH_POTION_B, SN_TALK_COMMON_EXIT ]
+menuOffset = 1
+menuLength = 2
+LuaShowMenu(MENUTYPE_GREETING,EventID,menuOffset,menuLength,LuaNpcHandlerNum())
+```
+{% endtab %}
+{% endtabs %}
+
+#### LuaSetCurPage
+
+Sets the page number used to track the loop process through the callback from [LuaInsertFunctionStringList](lua.md#luainsertfunctionstringlist). Generally used before [LuaShowMenu](lua.md#luashowmenu).
+
+| Parameter  | Type  | Description           |
+| ---------- | ----- | --------------------- |
+| PageNumber | `int` | Page number to be set |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+pageNumber = 1
+LuaSetCurPage(pageNumber)
+```
+{% endtab %}
+{% endtabs %}
+
+#### LuaGetCurPage
+
+Gets the page number used to track the loop process through the callback from [LuaInsertFunctionStringList](lua.md#luainsertfunctionstringlist).
+
+| Return     | Type  | Description         |
+| ---------- | ----- | ------------------- |
+| PageNumber | `int` | Current page number |
+
+{% tabs %}
+{% tab title="Example" %}
+```lua
+currentPage = LuaGetCurPage()
+if currentPage == 1 then
+    -- code here
+elseif currentPage == 2 then
+    -- code here
+else
+    -- code here
+end
+```
+{% endtab %}
+{% endtabs %}
