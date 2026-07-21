@@ -1,5 +1,23 @@
 ---
 hidden: true
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # JMXV2DTI
@@ -28,39 +46,13 @@ foreach(TileCount)
 }
 ```
 
-| Column   | Format      | Description                                                                                                                                                                                   |
-| -------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ID       | {0:00000}   |                                                                                                                                                                                               |
-| Type     | 0x{1:X8}    | [#tiletype](jmxv2dti.md#tiletype "mention")                                                                                                                                                   |
-| Category | "{2}"       |                                                                                                                                                                                               |
-| Filename | "{3}"       | \*.ddj                                                                                                                                                                                        |
-| ? Grass  | \{{0},{1\}} | <p>First value indicates and index from object.ifo<br>Second value indicates grass amount which is randomly placed on the tile.<br></p><p><em>Multiple grass per tile is possible.</em></p> |
-
-
-
-***
-
-### TileType
-
-```csharp
-public enum TileType: int
-{
-    Dirt = 0,
-    Sand = 1,
-    Ashfield = 2,
-    Stone = 3,
-    Metal = 4,
-    Wood = 5,
-    Mud = 6,
-    Water = 7,
-    DeepWater = 8,
-    Snow = 9,
-    Grass = 10,
-    LongGrass = 11,
-    Forest = 12,
-    Cloud = 13
-}
-```
+| Column   | Format      | Description                                                                                                                                                                                |
+| -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ID       | {0:00000}   |                                                                                                                                                                                            |
+| Type     | 0x{1:X8}    | [#tiletype](jmxv2dti.md#tiletype "mention")                                                                                                                                                |
+| Category | "{2}"       |                                                                                                                                                                                            |
+| Filename | "{3}"       | \*.ddj                                                                                                                                                                                     |
+| ? Grass  | \{{0},{1\}} | <p>First value indicates and index from object.ifo<br>Second value indicates grass amount which is randomly placed on the tile.<br></p><p><em>Can have multiple grass per tile.</em></p> |
 {% endtab %}
 
 {% tab title="ImHex" %}
@@ -106,3 +98,27 @@ JMXV2DTI file @ 0;
 ```
 {% endtab %}
 {% endtabs %}
+
+***
+
+### TileType
+
+```csharp
+public enum TileType: int
+{
+    Dirt = 0,
+    Sand = 1,
+    Ashfield = 2,
+    Stone = 3,
+    Metal = 4,
+    Wood = 5,
+    Mud = 6,
+    Water = 7,
+    DeepWater = 8,
+    Snow = 9,
+    Grass = 10,
+    LongGrass = 11,
+    Forest = 12,
+    Cloud = 13
+}
+```
