@@ -19,9 +19,13 @@ layout:
     visible: true
 ---
 
-# Client
+# AGENT\_ENTITY\_SKILL\_BUFF\_ADD
 
-Here you'll find information, guides, resources and references on how the game client works under the hood.
+* Opcode `0xB0BD`
+* Direction `S > C`
 
-* [A Guide to Silkroad's Security](a-guide-to-silkroads-security.md)
-
+```csharp
+4   uint    Entity.UID
+4   uint    Skill.ID
+4   uint    Skill.UID
+```

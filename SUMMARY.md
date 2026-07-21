@@ -68,6 +68,8 @@
     * [AGENT\_ENTITY\_ROTATION\_ACK](packets/agent/agent_entity_rotation_ack.md)
     * [AGENT\_ENTITY\_SKILL\_CAST\_BEGIN](packets/agent/agent_entity_skill_cast_begin.md)
     * [AGENT\_ENTITY\_SKILL\_CAST\_END](packets/agent/agent_entity_skill_cast_end.md)
+    * [AGENT\_ENTITY\_SKILL\_BUFF\_ADD](packets/agent/agent_entity_skill_buff_add.md)
+    * [AGENT\_ENTITY\_SKILL\_BUFF\_REMOVE](packets/agent/agent_entity_skill_buff_remove.md)
     * [AGENT\_ENTITY\_STATE\_UPDATE](packets/agent/agent_entity_state_update.md)
     * [AGENT\_QUEST\_SCRIPT](packets/agent/agent_quest_script.md)
 * [LUA](lua.md)

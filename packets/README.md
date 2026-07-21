@@ -3,6 +3,24 @@ description: >-
   Packets are chunks of bytes (data) sent/received through the network, ordered
   and organized in packages with an unique ID (opcode) to exchange information
   between client and server through protocols.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # Packets

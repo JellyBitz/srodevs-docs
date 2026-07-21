@@ -19,9 +19,16 @@ layout:
     visible: true
 ---
 
-# Client
+# AGENT\_ENTITY\_SKILL\_BUFF\_REMOVE
 
-Here you'll find information, guides, resources and references on how the game client works under the hood.
+* Opcode `0xB072`
+* Direction `S > C`
 
-* [A Guide to Silkroad's Security](a-guide-to-silkroads-security.md)
+```csharp
+1   byte    Result
+if(Result == 1)
+{
+    4   uint    Skill.UID
+}
 
+```

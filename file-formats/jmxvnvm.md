@@ -1,5 +1,23 @@
 ---
 hidden: true
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # JMXVNVM
@@ -13,12 +31,12 @@ Internally known as `RTNavMeshTerrain`, is a type of `RTNavMesh`.
 ```csharp
 12  string  Signature         //JMXVNVM 1000
 
-// Objects (RTNavMeshObj)
+// [Objects...] (RTNavMeshObj)
 2   short   ObjectCount
 foreach(ObjectCount)
 {
     // MapObject
-    4   int     ResourceID    // See "object.ifo"
+    4   int     ResourceId    // See "object.ifo"
     12  string  LocalPosition // Relative to region where it belongs
     2   short   IsStatic      // 0 = No, -1 = Yes
     4   float   Yaw
@@ -35,13 +53,13 @@ foreach(ObjectCount)
     foreach (LinkedEdgeCount)
     {
         // Values ​​of (-1) are invalid entries, removed perhaps
-        2   short   LinkedEdge.OtherObjectIndex
+        2   short   LinkedEdge.OtherObjectIndex // From [Objects...]
         2   short   LinkedEdge.OtherEdgeIndex
-        2   short   LinkedEdge.EdgeIndex  // See "PrimMeshNavEdge" from JMXVBMS
+        2   short   LinkedEdge.EdgeIndex // See "PrimMeshNavEdge" from JMXVBMS
     }
 }
 
-// Cells (RTNavMeshCellQuad)
+// [Cells...] (RTNavMeshCellQuad)
 4   uint    CellCount
 4   uint    WalkableCellCount
 foreach (cellCount)
@@ -54,7 +72,7 @@ foreach (cellCount)
     1   byte    Cell.ObjectCount
     foreach (Cell.ObjectCount)
     {
-        2   ushort  ObjectIndex // From Objects list
+        2   ushort  ObjectIndex // From [Objects...]
     }
 }
 
@@ -67,13 +85,13 @@ foreach (GlobalEdgeCount)
     8   Vector2 Edge.Max
 
     1   byte    Edge.Flags              // See "EdgeFlag"
-    1   sbyte   Edge.AssocDirection[0]  // See "EdgeDirection"
-    1   sbyte   Edge.AssocDirection[1]  // -1 if Blocked
-    2   short   Edge.AssocCellIndex[0]  // From Cells list
-    2   short   Edge.AssocCellIndex[1]  // -1 if Blocked
+    1   sbyte   Edge.AssocDirectionFrom // See "EdgeDirection"
+    1   sbyte   Edge.AssocDirectionTo
+    2   short   Edge.AssocCellIndexFrom // From [Cells...]
+    2   short   Edge.AssocCellIndexTo
 
-    2   short   Edge.AssocRegionID[0]
-    2   short   Edge.AssocRegionID[1]   // -1 if Blocked
+    2   short   Edge.AssocRegionIdFrom
+    2   short   Edge.AssocRegionIdTo    // -1 if Blocked
 }
 
 // Internal Edges (RTNavMeshEdgeInternal)
@@ -85,16 +103,16 @@ foreach (InternalEdgeCount)
     8   Vector2 Edge.Max
 
     1   byte    Edge.Flags              // See "EdgeFlag"
-    1   sbyte   Edge.AssocDirection[0]  // See "EdgeDirection"
-    1   sbyte   Edge.AssocDirection[1]  // -1 if Blocked
-    2   short   Edge.AssocCellIndex[0]  // From Cells list
-    2   short   Edge.AssocCellIndex[1]  // -1 if Blocked
+    1   sbyte   Edge.AssocDirectionFrom // See "EdgeDirection"
+    1   sbyte   Edge.AssocDirectionTo
+    2   short   Edge.AssocCellIndexFrom // From [Cells...]
+    2   short   Edge.AssocCellIndexTo
 }
 
 // TileMap (96x96)
 for (int i = 0; i < 96 * 96; i++)
 {
-    4   int     Tile.CellIndex   // From Cells list
+    4   int     Tile.CellIndex   // From [Cells...]
     2   ushort  Tile.Flags       // See "TileFlag"
     2   ushort  Tile.TextureID   // See "tile2D.ifo" (Used for foot-step sounds)
 }
