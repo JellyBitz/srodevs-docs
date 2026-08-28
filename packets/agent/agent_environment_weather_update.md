@@ -19,12 +19,25 @@ layout:
     visible: true
 ---
 
-# DOWNLOAD\_FILE\_REQ
+# AGENT\_ENVIRONMENT\_WEATHER\_UPDATE
 
-* Opcode `0x6004`&#x20;
-* Direction `C > S`&#x20;
+* Opcode `0x3809`
+* Direction `S > C`
 
 ```csharp
-4   uint    ID
-4   uint    unkUInt0 // Might be the HIGH DWORD of the ID, just not implemented
+1   byte    WeatherType
+1   byte    Intensity
+```
+
+***
+
+### WeatherType
+
+```csharp
+public enum WeatherType : byte
+{
+    Clear = 1,
+    Rain = 2,
+    Snow = 3
+}
 ```

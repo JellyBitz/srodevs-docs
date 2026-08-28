@@ -19,12 +19,13 @@ layout:
     visible: true
 ---
 
-# DOWNLOAD\_FILE\_REQ
+# AGENT\_ENVIRONMENT\_CELESTIAL\_UPDATE
 
-* Opcode `0x6004`&#x20;
-* Direction `C > S`&#x20;
+* Opcode `0x3027`
+* Direction `S > C`
 
 ```csharp
-4   uint    ID
-4   uint    unkUInt0 // Might be the HIGH DWORD of the ID, just not implemented
+2   ushort  Moonphase   // See "map/sun/moon?.ddj" [00,30] 
+1   byte    Hour        //0-23
+1   byte    Minute      //0-59
 ```
