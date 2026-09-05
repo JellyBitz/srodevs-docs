@@ -115,7 +115,7 @@ for (int i = 0; i < 96 * 96; i++)
 {
     4   int     Tile.CellIndex   // From [Cells...]
     2   ushort  Tile.Flags       // See "TileFlag"
-    2   ushort  Tile.TextureID   // See "tile2D.ifo" (Used for foot-step sounds)
+    2   ushort  Tile.TextureID   // Used for foot-step sounds. See "tile2D.ifo"
 }
 
 // HeightMap (97x97)
@@ -184,6 +184,9 @@ struct MapObject
     bool IsStruct;
     u16 RegionId;
 };
+fn format_MapObject(MapObject o) {
+    return std::format("UID:{} ({}) RID:{}", o.UID, o.ResourceId, o.RegionId);
+};
 
 struct LinkEdge
 {
@@ -194,7 +197,7 @@ struct LinkEdge
 
 struct NavMeshObj
 {
-   MapObject MapObject;
+   MapObject MapObject [[format("format_MapObject")]];
    u16 LinkEdgeCount;
    LinkEdge LinkEdges[LinkEdgeCount];
 };
@@ -267,6 +270,7 @@ bitfield TileFlag
     Bit13 : 1;
     Bit14 : 1;
     Bit15 : 1;
+    Bit16 : 1;
 };
 
 struct Tile
