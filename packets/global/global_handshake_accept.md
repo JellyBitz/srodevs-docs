@@ -19,14 +19,11 @@ layout:
     visible: true
 ---
 
-# GLOBAL\_MODULE\_IDENTIFICATION
+# GLOBAL\_HANDSHAKE\_ACCEPT
 
-* Opcode `0x2001`&#x20;
-* Direction `S > C`&#x20;
-* Encrypted (client only)
+* Opcode `0x9000`
+* Direction `C > S`
 
 ```csharp
-2   ushort  Module.Name.Length
-*   string  Module.Name
-1   byte    Module.Type // 0 = Client, 1 = Server
+// Empty
 ```

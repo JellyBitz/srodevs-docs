@@ -19,14 +19,14 @@ layout:
     visible: true
 ---
 
-# GLOBAL\_MODULE\_IDENTIFICATION
+# GLOBAL\_MODULE\_CERTIFICATION\_REQ
 
-* Opcode `0x2001`&#x20;
-* Direction `S > C`&#x20;
-* Encrypted (client only)
+* Opcode `0x6003`
+* Direction `C > S`
 
 ```csharp
 2   ushort  Module.Name.Length
 *   string  Module.Name
-1   byte    Module.Type // 0 = Client, 1 = Server
+2   ushort  Module.IP.Length
+*   string  Module.IP
 ```
