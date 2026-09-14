@@ -29,7 +29,7 @@ layout:
 1   byte    Result
 if( Result == 0x01 )
 {
-    // Check SRO_CERTIFICATION for reference
+    // Wrap all certification configurations
 
     // Module
     1   byte    unkByte01                //0
