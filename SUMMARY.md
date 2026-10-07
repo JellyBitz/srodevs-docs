@@ -79,6 +79,7 @@
     * [AGENT\_ENTITY\_SKILL\_BUFF\_REMOVE](packets/agent/agent_entity_skill_buff_remove.md)
     * [AGENT\_ENTITY\_STATE\_UPDATE](packets/agent/agent_entity_state_update.md)
     * [AGENT\_QUEST\_SCRIPT](packets/agent/agent_quest_script.md)
+    * [AGENT\_SEND\_PACKET\_TO\_CLIENT](packets/agent/agent_send_packet_to_client.md)
 * [LUA](lua.md)
 * [CScript](cscript.md)
 * [Client](client/README.md)
