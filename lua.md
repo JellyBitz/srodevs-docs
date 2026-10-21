@@ -569,20 +569,21 @@ Adds a buff to the player talking.
 
 {% tabs %}
 {% tab title="Example" %}
-<pre class="language-lua"><code class="lang-lua">function GetSlotFromItem(Codename)
+```lua
+function GetSlotFromItem(Codename)
     return LuaEventInQuireSameItem(0,Codename,INQUIRE_SAMEITEM_OP_FIND_FIRST_SLOT,-1)
 end
 
 -- ...
-<strong>
-</strong><strong>-- Give buff through NPC instead using the item directly
-</strong><strong>slot = GetSlotFromItem("ITEM_ETC_E051123_AGILITY_SCROLL")
-</strong>if slot >= 0 then
+
+-- Give buff through NPC instead using the item directly
+slot = GetSlotFromItem("ITEM_ETC_E051123_AGILITY_SCROLL")
+if slot >= 0 then
     -- item found, remove it and give buff
     LuaDelItem_EXT(0,slot,1,SYSOP_REASON_DRAINED,0)
     LuaEngageBuffSkill("SKILL_ETC_E051123_AGILITY_SCROLL_01")
 end
-</code></pre>
+```
 {% endtab %}
 {% endtabs %}
 
