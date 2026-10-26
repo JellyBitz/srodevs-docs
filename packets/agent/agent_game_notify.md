@@ -55,6 +55,6 @@ public enum GameNotifyType : ushort
 {
     UniqueSpawn = 0x0C05,
     UniqueKilled = 0x0C06,
-    Information = 0x0C28,
+    Information = 0x0C1C,
 }
 ```
