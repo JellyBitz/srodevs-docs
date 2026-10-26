@@ -40,9 +40,9 @@ else if( GameNotifyType == GameNotifyType.UniqueKilled )
 }
 else if( GameNotifyType == GameNotifyType.Information )
 {
-    1   byte    MessageType // 1 = Popup (Blue), 2 = System (Right window)
-    2   ushort  Message.Length
-    *   string  Message
+    1   byte    DisplayType // 1 = Popup (Blue), 2 = System (Right window)
+    2   ushort  Textname.Length
+    *   string  Textname
 }
 ```
 
@@ -53,8 +53,13 @@ else if( GameNotifyType == GameNotifyType.Information )
 ```csharp
 public enum GameNotifyType : ushort
 {
-    UniqueSpawn = 0x0C05,
-    UniqueKilled = 0x0C06,
+    UniqueSpawn = 0x0C05, // UIIT_MSG_APPEAR_UNIC
+    UniqueKilled = 0x0C06, // UIIT_MSG_ANYONE_DEAD_UNIC
+    GuildEvent = 0x0C07,
+    SpecialTrader = 0x0C08, // UIIT_MSG_SPECIALTY_ANNOUNCE_SELL_READY
+    GateQinShiOpen = 0x0C10, // UIIT_TQ_F4_TELEPORT_OPEN
+    GateQinShiClose = 0x0C11, // UIIT_TQ_F4_TELEPORT_CLOSE
+    // ...
     Information = 0x0C1C,
 }
 ```
