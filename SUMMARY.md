@@ -55,6 +55,7 @@
     * [AGENT\_CHARACTER\_EXP\_UPDATE](packets/agent/agent_character_exp_update.md)
     * [AGENT\_CHARACTER\_INFO\_UPDATE](packets/agent/agent_character_info_update.md)
     * [AGENT\_CHARACTER\_BODYSTATE\_REQ](packets/agent/agent_character_bodystate_req.md)
+    * [AGENT\_GAME\_NOTIFY](packets/agent/agent_game_notify.md)
     * [AGENT\_GAME\_INVITE](packets/agent/agent_game_invite.md)
     * [AGENT\_GAME\_LOGOUT\_REQ](packets/agent/agent_game_logout_req.md)
     * [AGENT\_GAME\_LOGOUT\_ACK](packets/agent/agent_game_logout_ack.md)
